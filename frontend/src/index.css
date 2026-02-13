@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* App-wide utility classes */
+.container-app {
+  @apply min-h-screen bg-gray-50 text-gray-900;
+}
+
+.card {
+  @apply bg-white rounded-xl shadow-sm border border-gray-200 p-5;
+}
+
+.btn-primary {
+  @apply inline-flex items-center gap-2 rounded-md bg-emerald-600 px-4 py-2 text-white hover:bg-emerald-700 active:bg-emerald-800 disabled:opacity-50;
+}
+
+/* Light/outline variants, handy over colored backgrounds */
+.btn-light {
+  @apply inline-flex items-center gap-2 rounded-md bg-white/90 px-4 py-2 text-emerald-700 hover:bg-white active:bg-gray-50;
+}
+.btn-outline-white {
+  @apply inline-flex items-center gap-2 rounded-md border border-white/80 px-4 py-2 text-white hover:bg-white/10;
+}
+
+/* Micro-animations on buttons */
+.btn-primary, .btn-light, .btn-outline-white {
+  @apply transition-transform duration-150 ease-out hover:shadow active:scale-95;
+}
+
+.brand-hero {
+  font-family: 'Yatra One', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+}
+
+/* Easy Mode bottom navigation */
+.easy-bottom-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  @apply z-40 bg-white border-t border-gray-200 shadow-lg grid grid-cols-5 gap-0;
+}
+.easy-bottom-item {
+  @apply flex flex-col items-center justify-center py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-emerald-500;
+}
+.easy-bottom-item.active {
+  @apply bg-emerald-50 text-emerald-700;
+}
+.easy-bottom-icon {
+  @apply text-2xl leading-none;
+}
+.easy-bottom-text {
+  @apply mt-1 text-xs;
+}
+
+/* Large tap target helper */
+.tap-lg {
+  @apply min-h-[44px] min-w-[44px];
+}

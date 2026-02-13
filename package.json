@@ -1,0 +1,17 @@
+{
+  "name": "sih_project",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "setup": "npm run setup:frontend && npm run setup:backend",
+    "setup:frontend": "npm --prefix frontend install",
+    "setup:backend": "py -m pip install -r backend/requirements.txt",
+    "dev:backend": "py -m uvicorn app.main:app --reload --port 8000 --app-dir backend",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev": "concurrently -k -s first -n BACKEND,FRONTEND -c green,cyan \"npm run dev:backend\" \"wait-on http-get://127.0.0.1:8000/api/health && npm run dev:frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1",
+    "wait-on": "^7.2.0"
+  }
+}

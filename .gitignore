@@ -1,0 +1,18 @@
+# Node
+node_modules/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Local DB
+sih.db
+
+# Secrets
+backend/.env
+backend/.env.local
+
+# Root env files
+.env
+.env.local
